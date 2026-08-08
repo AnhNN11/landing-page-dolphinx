@@ -1,0 +1,13 @@
+import type { Metadata } from "next";
+import { DigitalProductGallery, type DigitalProject } from "../components/DigitalProductGallery";
+
+export const metadata: Metadata = { title: "Thiết kế Mobile App iOS & Android", description: "DolphinX Studio thiết kế và phát triển ứng dụng mobile cho bán lẻ, vận hành, giáo dục và dịch vụ." };
+
+const projects: DigitalProject[] = [
+  { id:"retail-companion", name:"Retail Companion", category:"Retail Mobile App", headline:"Mua sắm, thành viên và ưu đãi trong một ứng dụng.", summary:"Concept mobile app cho thương hiệu bán lẻ kết nối catalog, membership và lịch sử giao dịch.", image:"/images/project-retail-unsplash.jpg", accent:"#075fc2", features:["Catalog","Membership","Order tracking"] },
+  { id:"fieldops-mobile", name:"FieldOps Mobile", category:"Operations App", headline:"Công việc hiện trường được cập nhật ngay tại nơi diễn ra.", summary:"Ứng dụng cho đội ngũ kỹ thuật nhận việc, cập nhật checklist, hình ảnh và trạng thái bàn giao.", image:"/images/software-team-pexels.jpg", accent:"#f07832", features:["Task board","Checklist","Offline sync"] },
+  { id:"campus-connect", name:"Campus Connect", category:"Education App", headline:"Một cổng học tập gọn cho học viên và phụ huynh.", summary:"Concept ứng dụng giáo dục với lịch học, thông báo, tiến độ và liên hệ trung tâm.", image:"/images/startup-meeting-pexels.jpg", accent:"#7c4dff", features:["Schedule","Progress","Notifications"] },
+  { id:"service-pocket", name:"Service Pocket", category:"Booking App", headline:"Đặt dịch vụ và theo dõi lịch hẹn không cần gọi điện.", summary:"Ứng dụng đặt lịch cho doanh nghiệp dịch vụ với hồ sơ khách hàng và nhắc hẹn.", image:"/images/vietnamese-retail-team.png", accent:"#0a9b6b", features:["Booking","Profiles","Reminders"] },
+];
+
+export default function MobileAppPage(){return <DigitalProductGallery eyebrow="MOBILE APP STUDIO" title="Ứng dụng mobile cho những hành trình" highlight="cần quay lại mỗi ngày." description="Thiết kế và phát triển ứng dụng iOS, Android theo nghiệp vụ thật — từ trải nghiệm người dùng đến dữ liệu và tích hợp phía sau." projects={projects} mode="mobile"/>;}
