@@ -11,6 +11,12 @@ export type BlogArticle = {
   readingTime: string;
   graphic: BlogGraphic;
   accent: string;
+  coverImage?: string;
+  coverAlt?: string;
+  coverBadge?: string;
+  coverPosition?: "center" | "top";
+  coverFit?: "cover" | "contain";
+  coverCredit?: { label: string; href: string; note?: string };
   intro: string;
   sections: Array<{ heading: string; paragraphs: string[]; bullets?: string[] }>;
   takeaway: string;
@@ -18,6 +24,56 @@ export type BlogArticle = {
 };
 
 export const blogArticles: BlogArticle[] = [
+  {
+    slug: "phan-tich-website-fpt-da-nang-trai-nghiem-tuyen-sinh",
+    title: "Website giáo dục cần làm rõ điều gì? Góc nhìn từ FPT Đà Nẵng",
+    category: "Website",
+    excerpt: "Phân tích một giao diện thật để thấy cách hình ảnh khuôn viên, điều hướng tuyển sinh và nội dung tạo niềm tin cùng làm việc.",
+    description: "Phân tích website FPT University Campus Đà Nẵng dưới góc nhìn UX, nội dung và chuyển đổi dành cho website giáo dục.",
+    date: "2026-08-10",
+    dateLabel: "10.08.2026",
+    readingTime: "8 phút đọc",
+    graphic: "landing",
+    accent: "#f07832",
+    coverImage: "/images/blog/fpt-da-nang-homepage-reference.webp",
+    coverAlt: "Ảnh chụp giao diện website Trường Đại học FPT Campus Đà Nẵng với hình ảnh khuôn viên thực tế",
+    coverBadge: "GIAO DIỆN THẬT · WEBSITE GIÁO DỤC",
+    coverPosition: "top",
+    coverFit: "contain",
+    coverCredit: {
+      label: "Website Trường Đại học FPT Campus Đà Nẵng",
+      href: "https://daihoc.fpt.edu.vn/da-nang/",
+      note: "Ảnh chụp giao diện công khai dùng cho mục đích phân tích. DolphinX không phải đơn vị phát triển website này.",
+    },
+    intro: "Với website giáo dục, người xem không chỉ tìm một chương trình đào tạo. Họ còn muốn hình dung môi trường học, kiểm tra điều kiện tuyển sinh và biết bước tiếp theo cần làm gì. Giao diện FPT Đà Nẵng là một ví dụ công khai hữu ích để nhìn cách nội dung thật và kiến trúc thông tin cùng tạo niềm tin.",
+    sections: [
+      {
+        heading: "Hình ảnh thật giúp lời hứa có bằng chứng",
+        paragraphs: [
+          "Hero dùng ảnh khuôn viên thực tế và tên campus ngay trong vùng nhìn đầu tiên. Cách trình bày này giúp người xem nhận diện đúng địa điểm trước khi đọc sâu hơn về chương trình hay chính sách.",
+          "Đối với trường học, phòng khám, nhà hàng hoặc doanh nghiệp dịch vụ, ảnh thật thường thuyết phục hơn một minh hoạ chung chung vì nó trả lời trực tiếp câu hỏi: trải nghiệm này diễn ra ở đâu và trông như thế nào?",
+        ],
+        bullets: ["Ưu tiên ảnh có bối cảnh và con người thật", "Giữ màu ảnh nhất quán với thương hiệu", "Nén ảnh theo kích thước hiển thị", "Viết alt text mô tả đúng nội dung"],
+      },
+      {
+        heading: "Điều hướng phải bám theo ý định của phụ huynh và học sinh",
+        paragraphs: [
+          "Các nhóm chính như chương trình đào tạo, tuyển sinh, tin tức và đồng hành cùng sĩ tử được đặt ở cấp điều hướng đầu. Đây là những nhu cầu có chủ đích rõ, không phải tên phòng ban nội bộ.",
+          "Khi xây website cho doanh nghiệp, nguyên tắc tương tự vẫn đúng: cấu trúc menu nên phản ánh việc khách hàng muốn hoàn thành, thay vì phản ánh sơ đồ tổ chức của công ty.",
+        ],
+      },
+      {
+        heading: "Mỗi trang cần một bước tiếp theo rõ ràng",
+        paragraphs: [
+          "Một website nhiều nội dung dễ khiến người xem chỉ đọc rồi rời đi. Sau phần giới thiệu, nên có CTA theo ngữ cảnh như xem ngành học, kiểm tra phương thức tuyển sinh, đăng ký tư vấn hoặc tham quan campus.",
+          "Trên mobile, CTA quan trọng cần đủ lớn, không che nội dung và không phụ thuộc vào hiệu ứng hover. Form cũng nên ngắn, giải thích dữ liệu nào được thu thập và phản hồi trạng thái ngay sau khi gửi.",
+        ],
+        bullets: ["Một CTA chính cho mỗi cụm nội dung", "Giữ thông tin liên hệ dễ tìm", "Không dùng pop-up che toàn bộ màn hình", "Đo sự kiện cho từng hành động quan trọng"],
+      },
+    ],
+    takeaway: "Website đáng tin không chỉ đẹp; nó dùng hình ảnh thật, cấu trúc theo nhu cầu người xem và luôn chỉ ra một bước tiếp theo phù hợp.",
+    sources: [{ label: "FPT University Campus Đà Nẵng", href: "https://daihoc.fpt.edu.vn/da-nang/" }],
+  },
   {
     slug: "zalo-mini-app-phu-hop-voi-doanh-nghiep-nao",
     title: "Zalo Mini App phù hợp với mô hình doanh nghiệp nào?",
@@ -29,6 +85,9 @@ export const blogArticles: BlogArticle[] = [
     readingTime: "7 phút đọc",
     graphic: "miniapp",
     accent: "#075fc2",
+    coverImage: "/images/blog/dolphinx-zalo-miniapp-ecosystem-v1.webp",
+    coverAlt: "Ba màn hình điện thoại hiển thị trải nghiệm Zalo Mini App bán hàng, thành viên và đặt lịch",
+    coverBadge: "DOLPHINX ORIGINAL · ZALO MINI APP",
     intro: "Mini App hiệu quả nhất khi nó rút ngắn một hành trình vốn đang diễn ra rời rạc: khách xem sản phẩm ở một nơi, hỏi tư vấn ở một nơi và quay lại nhận ưu đãi ở một nơi khác. Bài toán cần giải quyết nên đến trước danh sách tính năng.",
     sections: [
       { heading: "Bắt đầu từ tần suất quay lại", paragraphs: ["Nếu khách hàng chỉ tương tác một lần rồi rời đi, một landing page tốt có thể đã đủ. Mini App phát huy giá trị khi người dùng quay lại để mua hàng, đặt lịch, kiểm tra đơn, tích điểm hoặc nhận quyền lợi."], bullets: ["F&B và bán lẻ có mua lặp lại", "Spa, phòng khám và dịch vụ có lịch hẹn", "Giáo dục có lịch học và thông báo", "Thương hiệu có chương trình thành viên"] },
@@ -49,6 +108,9 @@ export const blogArticles: BlogArticle[] = [
     readingTime: "6 phút đọc",
     graphic: "loyalty",
     accent: "#7c4dff",
+    coverImage: "/images/blog/dolphinx-zalo-loyalty-v1.webp",
+    coverAlt: "Nhân viên quán cà phê Việt Nam giới thiệu chương trình thành viên trên Mini App cho khách hàng",
+    coverBadge: "DOLPHINX ORIGINAL · LOYALTY UX",
     intro: "Người dùng mở Mini App để hoàn thành một việc, không phải để học cách sử dụng một giao diện mới. Điều hướng quen thuộc, trạng thái rõ và nội dung đúng ngữ cảnh quan trọng hơn hiệu ứng phức tạp.",
     sections: [
       { heading: "Trang chủ cần trả lời ba câu hỏi", paragraphs: ["Tôi đang có quyền lợi gì, tôi có thể làm gì ngay bây giờ và trạng thái gần nhất của tôi là gì. Ba câu trả lời này nên xuất hiện trong vùng nhìn đầu tiên."], bullets: ["Điểm hoặc hạng thành viên", "Tác vụ chính như đặt món hay đặt lịch", "Đơn hàng, lịch hẹn hoặc voucher gần nhất"] },
@@ -69,6 +131,10 @@ export const blogArticles: BlogArticle[] = [
     readingTime: "8 phút đọc",
     graphic: "landing",
     accent: "#f07832",
+    coverImage: "/images/theme-references/automotive.jpg",
+    coverAlt: "Ảnh chụp website ô tô với hình ảnh sản phẩm thật và danh mục xe rõ ràng",
+    coverBadge: "GIAO DIỆN THẬT · WEBSITE Ô TÔ",
+    coverPosition: "top",
     intro: "Landing page và website không loại trừ nhau. Một bên tập trung vào một hành động trong một chiến dịch; bên còn lại xây nền tảng thông tin và niềm tin dài hạn. Quyết định sai thường đến từ việc bắt đầu bằng giao diện thay vì mục tiêu.",
     sections: [
       { heading: "Khi nào landing page là lựa chọn đúng", paragraphs: ["Landing page phù hợp khi bạn có một nguồn traffic, một thông điệp và một hành động chính. Ví dụ: đăng ký hội thảo, nhận tư vấn, đặt mua sản phẩm mới hoặc tải tài liệu."], bullets: ["Chiến dịch có thời hạn", "Một nhóm khách hàng cụ thể", "Một offer rõ ràng", "Có ngân sách quảng cáo và đo chuyển đổi"] },
@@ -88,6 +154,10 @@ export const blogArticles: BlogArticle[] = [
     readingTime: "9 phút đọc",
     graphic: "seo",
     accent: "#0a9b6b",
+    coverImage: "/images/theme-references/healthcare.jpg",
+    coverAlt: "Ảnh chụp website bệnh viện với bác sĩ, bệnh nhân và lời kêu gọi hành động rõ ràng",
+    coverBadge: "GIAO DIỆN THẬT · WEBSITE Y TẾ",
+    coverPosition: "top",
     intro: "Một trang đẹp có thể vẫn không tạo chuyển đổi nếu thông điệp mơ hồ, form gây ngại hoặc dữ liệu đo lường chưa sẵn sàng. Kiểm tra trước khi mua traffic luôn rẻ hơn sửa sau chiến dịch.",
     sections: [
       { heading: "Thông điệp trong năm giây đầu", paragraphs: ["Khách cần biết trang dành cho ai, giải quyết vấn đề gì và bước tiếp theo là gì. Headline không nên chỉ là khẩu hiệu; nó phải có thông tin đủ để người đọc tự nhận ra mình."], bullets: ["Headline nói rõ kết quả", "Subheadline giải thích cách làm", "CTA dùng động từ cụ thể", "Hình ảnh hỗ trợ đúng sản phẩm"] },
@@ -107,6 +177,9 @@ export const blogArticles: BlogArticle[] = [
     readingTime: "8 phút đọc",
     graphic: "roadmap",
     accent: "#13a6c8",
+    coverImage: "/images/startup-meeting-pexels.jpg",
+    coverAlt: "Nhóm doanh nghiệp nhỏ đang cùng trao đổi kế hoạch số hoá tại văn phòng",
+    coverBadge: "DOANH NGHIỆP THẬT · LỘ TRÌNH SỐ",
     intro: "Chuyển đổi số không bắt đầu bằng việc mua nhiều phần mềm. Nó bắt đầu bằng việc xác định điểm nào đang làm mất khách, mất thời gian hoặc mất dữ liệu, sau đó xây một lớp giải pháp đủ nhỏ để đội ngũ sử dụng được.",
     sections: [
       { heading: "Lớp một: điểm chạm khách hàng", paragraphs: ["Website hoặc landing page cần làm rõ doanh nghiệp cung cấp gì và khách nên thực hiện bước nào. Đây là nơi chuẩn hoá thông điệp trước khi đầu tư quảng cáo hoặc automation."] },
@@ -126,6 +199,9 @@ export const blogArticles: BlogArticle[] = [
     readingTime: "7 phút đọc",
     graphic: "automation",
     accent: "#075fc2",
+    coverImage: "/images/software-team-pexels.jpg",
+    coverAlt: "Đội ngũ phần mềm cùng xem mã nguồn và phối hợp xử lý quy trình",
+    coverBadge: "VẬN HÀNH THẬT · AUTOMATION",
     intro: "Automation tốt làm giảm thời gian chờ và sai sót. Automation kém tạo ra tin nhắn không đúng ngữ cảnh, dữ liệu trùng và cảm giác khách hàng đang nói chuyện với một hệ thống không hiểu mình.",
     sections: [
       { heading: "Tự động hoá tín hiệu, không tự động hoá sự thấu hiểu", paragraphs: ["Các bước dựa trên điều kiện rõ ràng có thể tự động: xác nhận đã nhận form, nhắc lịch, phân nhóm hoặc báo cho nhân viên phụ trách. Tư vấn giải pháp và xử lý ngoại lệ vẫn cần con người."] },

@@ -4,6 +4,7 @@ import "@fontsource-variable/manrope/wght.css";
 import "@fontsource-variable/plus-jakarta-sans/wght.css";
 import "./globals.css";
 import { GlobalExperience } from "./components/GlobalExperience";
+import { LocaleProvider } from "./components/LocaleProvider";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
@@ -25,11 +26,19 @@ export const metadata: Metadata = {
     "phát triển MVP startup",
     "thiết kế SaaS",
     "product studio Việt Nam",
+    "khóa học fullstack web",
+    "khóa học lập trình mobile",
+    "lập trình cho trẻ em Quảng Ngãi",
   ],
   authors: [{ name: "DolphinX Studio" }],
   creator: "DolphinX Studio",
   publisher: "DolphinX Studio",
   category: "Công nghệ thông tin",
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "vi_VN",
@@ -66,9 +75,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: "globalThis.process ??= { env: {} }; globalThis.process.env ??= {};" }} />
       </head>
       <body>
-        <a className="skip-link" href="#main-content">Bỏ qua điều hướng</a>
-        <GlobalExperience />
-        <div id="main-content">{children}</div>
+        <LocaleProvider>
+          <a className="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+          <GlobalExperience />
+          <div id="main-content">{children}</div>
+        </LocaleProvider>
       </body>
     </html>
   );

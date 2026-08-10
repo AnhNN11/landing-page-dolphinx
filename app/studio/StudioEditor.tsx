@@ -76,6 +76,8 @@ type Template = {
   name: string;
   category: string;
   colors: [string, string, string];
+  previewImage?: string;
+  previewSource?: string;
   document: SiteDocument;
 };
 
@@ -103,6 +105,8 @@ const templates: Template[] = [
     name: "Nova SaaS",
     category: "Startup",
     colors: ["#071c4b", "#075fc2", "#13c7e9"],
+    previewImage: "/images/theme-references/technology.jpg",
+    previewSource: "Website thật · ThemeWP",
     document: {
       name: "Nova SaaS Landing Page",
       pageBackground: "#ffffff",
@@ -120,6 +124,8 @@ const templates: Template[] = [
     name: "Mộc Coffee",
     category: "F&B",
     colors: ["#241a14", "#aa6a3b", "#efe2cf"],
+    previewImage: "/images/theme-references/food-bistro-v2.jpg",
+    previewSource: "Website thật · ThemeWP",
     document: {
       name: "Mộc Coffee Website",
       pageBackground: "#fbf7f1",
@@ -137,6 +143,8 @@ const templates: Template[] = [
     name: "Axis Studio",
     category: "Agency",
     colors: ["#101010", "#ffffff", "#b7ff37"],
+    previewImage: "/images/theme-references/agency.jpg",
+    previewSource: "Website thật · ThemeWP",
     document: {
       name: "Axis Creative Studio",
       pageBackground: "#f6f6f3",
@@ -146,6 +154,60 @@ const templates: Template[] = [
         block("stats", { background: "#b7ff37", color: "#101010", accent: "#101010", text: "24|Sản phẩm ra mắt|08|Lĩnh vực phục vụ|04|Quốc gia" }),
         block("features", { title: "Strategy meets craft.", background: "#f6f6f3", color: "#101010", accent: "#101010", text: "Product strategy|Brand systems|Web experiences" }),
         block("testimonial", { background: "#101010", color: "#ffffff", accent: "#b7ff37" }),
+      ],
+    },
+  },
+  {
+    id: "education",
+    name: "Bright Academy",
+    category: "Giáo dục",
+    colors: ["#f5f9ff", "#075fc2", "#ffb547"],
+    previewImage: "/images/theme-references/education.jpg",
+    previewSource: "Website thật · ThemeWP",
+    document: {
+      name: "Bright Academy Website",
+      pageBackground: "#ffffff",
+      fontFamily: '"Plus Jakarta Sans Variable", sans-serif',
+      blocks: [
+        block("hero", { label: "HỌC ĐỂ DẪN ĐẦU", title: "Mở lối tương lai bằng trải nghiệm học tập hiện đại.", text: "Chương trình thực tiễn, đội ngũ tận tâm và hành trình học tập được cá nhân hoá.", image: "/images/startup-meeting-pexels.jpg", background: "#075fc2", accent: "#ffb547" }),
+        block("features", { title: "Một hệ sinh thái học tập trọn vẹn", text: "Chương trình thực tiễn|Giảng viên đồng hành|Cộng đồng kết nối" }),
+        block("stats", { text: "2.400+|Học viên|96%|Hoàn thành khoá học|42|Chuyên gia" }),
+      ],
+    },
+  },
+  {
+    id: "interior",
+    name: "An Nhiên Living",
+    category: "Nội thất",
+    colors: ["#f4efe8", "#302b27", "#b78962"],
+    previewImage: "/images/theme-references/interior.jpg",
+    previewSource: "Website thật · ThemeWP",
+    document: {
+      name: "An Nhiên Interior Website",
+      pageBackground: "#f7f4ef",
+      fontFamily: '"Manrope Variable", sans-serif',
+      blocks: [
+        block("hero", { label: "KHÔNG GIAN CÓ CẢM XÚC", title: "Nội thất được thiết kế để sống cùng bạn.", text: "Từ ý tưởng đến thi công, mỗi chi tiết đều cân bằng công năng và thẩm mỹ.", image: "/images/software-team-pexels.jpg", background: "#302b27", accent: "#d7a77d" }),
+        block("features", { title: "Thiết kế vừa vặn với từng ngôi nhà", text: "Tư vấn không gian|Thiết kế 3D|Thi công hoàn thiện", background: "#f4efe8", color: "#302b27", accent: "#b78962" }),
+        block("testimonial", { background: "#302b27", color: "#ffffff", accent: "#d7a77d" }),
+      ],
+    },
+  },
+  {
+    id: "healthcare",
+    name: "MediCare Clinic",
+    category: "Sức khoẻ",
+    colors: ["#eefafa", "#087a88", "#35c7b3"],
+    previewImage: "/images/theme-references/healthcare.jpg",
+    previewSource: "Website thật · ThemeWP",
+    document: {
+      name: "MediCare Clinic Website",
+      pageBackground: "#ffffff",
+      fontFamily: '"Plus Jakarta Sans Variable", sans-serif',
+      blocks: [
+        block("hero", { label: "CHĂM SÓC CHỦ ĐỘNG", title: "Sức khoẻ của bạn, sự tận tâm của chúng tôi.", text: "Đặt lịch nhanh, theo dõi thuận tiện và kết nối trực tiếp với đội ngũ chuyên môn.", image: "/images/startup-meeting-pexels.jpg", background: "#087a88", accent: "#8ef0dc" }),
+        block("features", { title: "Chăm sóc liền mạch ở mọi điểm chạm", text: "Đặt lịch trực tuyến|Hồ sơ sức khoẻ|Nhắc lịch thông minh", background: "#eefafa", color: "#164e56", accent: "#087a88" }),
+        block("stats", { text: "15 phút|Đặt lịch nhanh|24/7|Tiếp nhận yêu cầu|4.9/5|Mức hài lòng" }),
       ],
     },
   },
@@ -195,6 +257,7 @@ export function StudioEditor() {
   const [history, setHistory] = useState<SiteDocument[]>([]);
   const [future, setFuture] = useState<SiteDocument[]>([]);
   const [activeTab, setActiveTab] = useState<ToolTab>("templates");
+  const [mobileLibraryOpen, setMobileLibraryOpen] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [viewport, setViewport] = useState<Viewport>("desktop");
   const [zoom, setZoom] = useState(74);
@@ -204,6 +267,22 @@ export function StudioEditor() {
   const [draggingId, setDraggingId] = useState<string | null>(null);
   const [hydrated, setHydrated] = useState(false);
   const uploadRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 680) {
+        setViewport("mobile");
+        setZoom(Math.max(60, Math.min(74, Math.floor(((screenWidth - 80) / viewportWidths.mobile) * 100))));
+        return;
+      }
+      if (screenWidth <= 960) {
+        setViewport("tablet");
+        setZoom(54);
+      }
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -388,11 +467,12 @@ export function StudioEditor() {
             ["text", Type, "Chữ"],
             ["brand", Palette, "Thương hiệu"],
             ["uploads", Upload, "Tải lên"],
-          ] as Array<[ToolTab, typeof Shapes, string]>).map(([id, Icon, label]) => <button key={id} onClick={() => setActiveTab(id)} className={activeTab === id ? styles.active : ""}><Icon size={20}/><span>{label}</span></button>)}
+          ] as Array<[ToolTab, typeof Shapes, string]>).map(([id, Icon, label]) => <button key={id} onClick={() => { setActiveTab(id); setMobileLibraryOpen((open) => activeTab === id ? !open : true); }} className={activeTab === id ? styles.active : ""}><Icon size={20}/><span>{label}</span></button>)}
         </aside>
 
-        <aside className={styles.library}>
-          {activeTab === "templates" && <><div className={styles.panelHeading}><span>Mẫu website</span><Sparkles size={17}/></div><div className={styles.search}><Search size={15}/><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Tìm theo ngành..."/></div><div className={styles.templateList}>{templates.filter((item) => `${item.name} ${item.category}`.toLowerCase().includes(search.toLowerCase())).map((template) => <button key={template.id} onClick={() => applyTemplate(template)} className={styles.templateCard}><div className={styles.templateVisual} style={{ background: template.colors[0] }}><span style={{ background: template.colors[2] }}/><strong style={{ color: template.colors[1] }}>Aa</strong><i style={{ background: template.colors[1] }}/></div><span><b>{template.name}</b><small>{template.category}</small></span></button>)}</div></>}
+        <aside className={`${styles.library} ${mobileLibraryOpen ? styles.libraryOpen : ""}`}>
+          <button type="button" className={styles.libraryClose} onClick={() => setMobileLibraryOpen(false)} aria-label="Đóng thư viện"><X size={16}/></button>
+          {activeTab === "templates" && <><div className={styles.panelHeading}><span>Mẫu website</span><Sparkles size={17}/></div><div className={styles.search}><Search size={15}/><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Tìm website theo ngành..."/></div><p className={styles.libraryNote}>Chọn một website thật để bắt đầu, sau đó thay nội dung và màu sắc theo thương hiệu của bạn.</p><div className={styles.templateList}>{templates.filter((item) => `${item.name} ${item.category}`.toLowerCase().includes(search.toLowerCase())).map((template) => <button key={template.id} onClick={() => applyTemplate(template)} className={styles.templateCard}><div className={styles.templateVisual} style={{ background: template.colors[0] }}>{template.previewImage ? <Image src={template.previewImage} alt={`Ảnh chụp website mẫu ${template.name}`} fill sizes="(max-width: 680px) 42vw, 130px" className={styles.templateScreenshot}/> : <><span style={{ background: template.colors[2] }}/><strong style={{ color: template.colors[1] }}>Aa</strong><i style={{ background: template.colors[1] }}/></>}{template.previewSource && <em>{template.previewSource}</em>}</div><span><b>{template.name}</b><small>{template.category}</small></span></button>)}</div></>}
           {activeTab === "elements" && <><div className={styles.panelHeading}><span>Khối nội dung</span><Plus size={17}/></div><div className={styles.search}><Search size={15}/><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Tìm khối..."/></div><div className={styles.elementList}>{filteredElements.map(({ kind, name, description, icon: Icon }) => <button key={kind} onClick={() => addBlock(kind)}><span><Icon size={18}/></span><div><b>{name}</b><small>{description}</small></div><Plus size={15}/></button>)}</div></>}
           {activeTab === "text" && <><div className={styles.panelHeading}><span>Văn bản</span><Type size={17}/></div><button className={styles.addText} onClick={() => addBlock("heading")}><Heading1 size={20}/><span><b>Thêm tiêu đề</b><small>Tiêu đề lớn của section</small></span></button><button className={styles.addText} onClick={() => addBlock("text")}><Type size={20}/><span><b>Thêm đoạn văn</b><small>Nội dung mô tả chi tiết</small></span></button><div className={styles.fontPreview}><small>Gợi ý kết hợp font</small><strong>Build something meaningful.</strong><span>Plus Jakarta Sans + Inter</span></div></>}
           {activeTab === "brand" && <><div className={styles.panelHeading}><span>Thương hiệu</span><Palette size={17}/></div><label className={styles.field}><span>Font toàn trang</span><select value={document.fontFamily} onChange={(event) => commit((current) => ({ ...current, fontFamily: event.target.value }))}>{fontChoices.map((font) => <option key={font.label} value={font.value}>{font.label}</option>)}</select></label><label className={styles.field}><span>Nền trang</span><span className={styles.colorField}><input type="color" value={document.pageBackground} onChange={(event) => commit((current) => ({ ...current, pageBackground: event.target.value }))}/><input value={document.pageBackground} onChange={(event) => commit((current) => ({ ...current, pageBackground: event.target.value }))}/></span></label><div className={styles.brandPalette}><small>Bảng màu DolphinX</small>{["#071c4b", "#075fc2", "#13c7e9", "#eef7ff", "#ffffff"].map((color) => <button key={color} style={{ background: color }} onClick={() => selected ? updateSelected({ accent: color }) : commit((current) => ({ ...current, pageBackground: color }))} aria-label={`Dùng màu ${color}`}/>)}</div></>}
@@ -404,10 +484,10 @@ export function StudioEditor() {
           <div className={styles.canvasWrap} style={{ width: viewportWidths[viewport] * zoom / 100 }}>
             <div className={styles.canvas} style={{ width: viewportWidths[viewport], transform: `scale(${zoom / 100})`, background: document.pageBackground, fontFamily: document.fontFamily }}>
               {document.blocks.map((item) => <div key={item.id} draggable onDragStart={() => setDraggingId(item.id)} onDragEnd={() => setDraggingId(null)} onDragOver={(event) => event.preventDefault()} onDrop={(event) => dropBlock(event, item.id)} onClick={(event) => { event.stopPropagation(); setSelectedId(item.id); }} className={`${styles.blockShell} ${selectedId === item.id ? styles.selected : ""} ${draggingId === item.id ? styles.dragging : ""}`}><div className={styles.blockLabel}><GripVertical size={13}/>{item.kind}</div>{selectedId === item.id && <div className={styles.blockActions}><button onClick={(event) => { event.stopPropagation(); moveSelected(-1); }} aria-label="Đưa lên"><ChevronUp size={14}/></button><button onClick={(event) => { event.stopPropagation(); moveSelected(1); }} aria-label="Đưa xuống"><ChevronDown size={14}/></button><button onClick={(event) => { event.stopPropagation(); duplicateSelected(); }} aria-label="Nhân bản"><Copy size={14}/></button><button onClick={(event) => { event.stopPropagation(); deleteSelected(); }} aria-label="Xoá"><Trash2 size={14}/></button></div>}{renderBlock(item)}</div>)}
-              {!document.blocks.length && <button className={styles.emptyCanvas} onClick={(event) => { event.stopPropagation(); addBlock("hero"); }}><Plus size={22}/><b>Thêm section đầu tiên</b><span>Bắt đầu với Hero hoặc chọn template bên trái.</span></button>}
+              {!document.blocks.length && <button className={styles.emptyCanvas} onClick={(event) => { event.stopPropagation(); addBlock("hero"); }}><Image className={styles.emptyCanvasGraphic} src="/images/dolphinx-graphic-studio-v2.webp" alt="Cá heo thiết kế giao diện trong DolphinX Studio" width={280} height={280}/><span className={styles.emptyCanvasAction}><Plus size={18}/></span><b>Thêm section đầu tiên</b><span>Bắt đầu với Hero hoặc chọn template bên trái.</span></button>}
             </div>
           </div>
-          <div className={styles.zoomControl}><button onClick={() => setZoom((value) => Math.max(35, value - 5))}>−</button><span>{zoom}%</span><input type="range" min="35" max="100" value={zoom} onChange={(event) => setZoom(Number(event.target.value))}/><button onClick={() => setZoom((value) => Math.min(100, value + 5))}>+</button></div>
+          <div className={styles.zoomControl}><button onClick={() => setZoom((value) => Math.max(35, value - 5))} aria-label="Thu nhỏ canvas">−</button><span>{zoom}%</span><input type="range" min="35" max="100" value={zoom} onChange={(event) => setZoom(Number(event.target.value))} aria-label="Mức thu phóng canvas"/><button onClick={() => setZoom((value) => Math.min(100, value + 5))} aria-label="Phóng to canvas">+</button></div>
         </section>
 
         <aside className={styles.inspector}>

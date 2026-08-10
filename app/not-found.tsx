@@ -11,9 +11,9 @@ export default function NotFound() {
         <div className="relative max-w-3xl">
           <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-[#071c4b] text-cyan-300 shadow-2xl"><Compass size={28}/></span>
           <b className="mt-8 block text-[11px] font-black tracking-[.2em] text-[#075fc2]">LẠC KHỎI HẢI TRÌNH · 404</b>
-          <h1 className="mt-5 font-[family-name:var(--display)] text-[clamp(50px,8vw,92px)] font-semibold leading-none tracking-[-.07em]">Trang này chưa có trên bản đồ.</h1>
+          <h1 className="dx-heading-gradient mt-5 font-[family-name:var(--display)] text-[clamp(50px,8vw,92px)] font-semibold leading-none tracking-[-.07em]">Trang này chưa có trên bản đồ.</h1>
           <p className="mx-auto mt-7 max-w-xl text-sm leading-7 text-slate-600">Liên kết có thể đã thay đổi. Bạn có thể quay về trang chủ hoặc tiếp tục khám phá các dịch vụ của DolphinX.</p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3"><Link href="/" className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#075fc2] px-6 text-xs font-bold text-white"><Home size={16}/>Về trang chủ</Link><Link href="/website" className="inline-flex min-h-12 items-center gap-2 rounded-xl border border-blue-100 bg-white px-6 text-xs font-bold text-[#075fc2]"><ArrowLeft size={16}/>Xem dịch vụ Website</Link></div>
+          <div className="mt-9 flex flex-wrap justify-center gap-3"><Link href="/" className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#075fc2] px-6 text-xs font-bold !text-white" style={{ backgroundColor: "#075fc2", color: "#ffffff" }}><Home size={16} className="text-white"/><span className="!text-white">Về trang chủ</span></Link><Link href="/website" className="dx-light-action inline-flex items-center gap-2 rounded-xl px-6 text-xs font-bold"><ArrowLeft size={16}/>Xem dịch vụ Website</Link></div>
         </div>
       </section>
       <ServiceFooter />

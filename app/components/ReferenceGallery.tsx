@@ -38,28 +38,40 @@ const monaReferences: ReferenceItem[] = [
 
 const zaloReferences: ReferenceItem[] = [
   {
-    title: "Ra mắt mẫu giao diện Zalo Mini App ZaUI Uni",
-    image: "https://stc-blogminiapp.zadn.vn/images/2026/04/Untitled-design--3--1.png",
-    href: "https://miniapp.zaloplatforms.com/blog/ra-mat-mau-giao-dien-zalo-mini-app-zaui-uni-2",
-    meta: "Giáo dục · ZaUI Uni",
+    title: "À Kàfe",
+    image: "/images/zalo-showcase/a-kafe.webp",
+    href: "https://zalo.me/s/33109955691590635/?utm_source=zalo-showcase",
+    meta: "F&B · Đặt món & thành viên",
   },
   {
-    title: "Zalo Mini App — Bản tin tháng 03/2026",
-    image: "https://stc-blogminiapp.zadn.vn/images/2026/03/blog_3_26.png",
-    href: "https://miniapp.zaloplatforms.com/blog/zalo-mini-app-ban-tin-thang-03-2026",
-    meta: "Bản tin sản phẩm",
+    title: "Ajinomoto Đặt Hàng",
+    image: "/images/zalo-showcase/ajinomoto-dat-hang.webp",
+    href: "https://zalo.me/s/2268998482250171718/?utm_source=zalo-showcase",
+    meta: "Thương mại · Kênh đặt hàng",
   },
   {
-    title: "Zalo Mini App trong trải nghiệm mua sắm Rhys Man",
-    image: "https://stc-blogminiapp.zadn.vn/images/2025/12/COVER--1-.png",
-    href: "https://miniapp.zaloplatforms.com/blog/zalo-mini-app-manh-ghep-giup-rhys-man-tai-dinh-nghia-trai-nghiem-mua-sam-cua-phai-manh-viet",
-    meta: "Bán lẻ · Case study",
+    title: "Bệnh viện Đa khoa Quốc tế Vinmec",
+    image: "/images/zalo-showcase/vinmec.jpg",
+    href: "https://zalo.me/s/3741321579625859498/?utm_source=zalo-showcase",
+    meta: "Sức khỏe · Dịch vụ bệnh viện",
   },
   {
-    title: "Quản lý danh mục sản phẩm trên Zalo Mini Shop",
-    image: "https://stc-blogminiapp.zadn.vn/images/2025/11/Web_Minishop_Qua--n-ly---danh-mu--c.png",
-    href: "https://miniapp.zaloplatforms.com/blog/huong-dan-quan-ly-danh-muc-san-pham-tren-zalo-mini-shop",
-    meta: "Mini Shop · Vận hành",
+    title: "Bệnh viện E",
+    image: "/images/zalo-showcase/benh-vien-e.jpg",
+    href: "https://zalo.me/s/4504060397762625067/?utm_source=zalo-showcase",
+    meta: "Sức khỏe · Đặt lịch & lấy số",
+  },
+  {
+    title: "Bốc số online Phường Gò Vấp",
+    image: "/images/zalo-showcase/boc-so-go-vap.jpg",
+    href: "https://zalo.me/s/831281158627376523/?utm_source=zalo-showcase",
+    meta: "Hành chính công · Bốc số online",
+  },
+  {
+    title: "Chợ Thợ",
+    image: "/images/zalo-showcase/cho-tho.jpg",
+    href: "https://zalo.me/s/1581270658237239714/?utm_source=zalo-showcase",
+    meta: "Tiện ích · Dịch vụ kỹ thuật",
   },
 ];
 
@@ -69,26 +81,28 @@ export function ReferenceGallery({ source }: { source: "mona" | "zalo" }) {
   const sourceName = isMona ? "MONA Media" : "Zalo Mini App";
   const sourceUrl = isMona
     ? "https://mona.media/mau-website/"
-    : "https://miniapp.zaloplatforms.com/blog/";
+    : "https://miniapp.zaloplatforms.com/showcase";
 
   return (
-    <section className={isMona ? "bg-[#071c4b] px-4 py-24 text-white" : "bg-white px-4 py-24"}>
+    <section id={isMona ? undefined : "templates"} className={isMona ? "bg-[#071c4b] px-4 py-24 text-white" : "bg-white px-4 py-24"}>
       <div className="mx-auto max-w-[1200px]">
         <div className="grid items-end gap-8 md:grid-cols-[1fr_.72fr]">
           <div>
             <span className={`inline-flex items-center gap-2 text-[10px] font-black tracking-[.16em] ${isMona ? "text-cyan-300" : "text-[#075fc2]"}`}>
               <Images size={15} /> THƯ VIỆN THAM KHẢO · {sourceName.toUpperCase()}
             </span>
-            <h2 className="mt-4 max-w-3xl font-[family-name:var(--display)] text-4xl font-semibold leading-tight tracking-[-.05em] md:text-6xl">
-              Hình ảnh thật để bạn nhìn rõ chất lượng trải nghiệm.
+            <h2 className={`${isMona ? "dx-heading-gradient-light" : "dx-heading-gradient"} mt-4 max-w-3xl font-[family-name:var(--display)] text-4xl font-semibold leading-tight tracking-[-.05em] md:text-6xl`}>
+              {isMona ? "Hình ảnh thật để bạn nhìn rõ chất lượng trải nghiệm." : "Sản phẩm Zalo Mini App đang vận hành thực tế."}
             </h2>
           </div>
           <div>
             <p className={`text-sm leading-7 ${isMona ? "text-slate-300" : "text-slate-600"}`}>
-              Đây là tư liệu tham khảo từ {sourceName}, không phải dự án do DolphinX thực hiện. Mỗi hình đều dẫn về nội dung gốc để bạn xem đầy đủ.
+              {isMona
+                ? `Đây là tư liệu tham khảo từ ${sourceName}, không phải dự án do DolphinX thực hiện. Mỗi hình đều dẫn về nội dung gốc để bạn xem đầy đủ.`
+                : "Các sản phẩm được chọn từ Showcase chính thức của Zalo Mini App, dùng để khách hàng hình dung rõ những mô hình có thể triển khai. Đây không phải dự án do DolphinX thực hiện."}
             </p>
             <a href={sourceUrl} target="_blank" rel="noreferrer" className={`mt-5 inline-flex items-center gap-2 text-xs font-extrabold ${isMona ? "text-cyan-300" : "text-[#075fc2]"}`}>
-              Mở thư viện nguồn <ExternalLink size={15} />
+              {isMona ? "Mở thư viện nguồn" : "Mở showcase chính thức"} <ExternalLink size={15} />
             </a>
           </div>
         </div>
