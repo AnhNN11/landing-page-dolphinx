@@ -70,12 +70,12 @@ export function GlobalExperience() {
   }, []);
 
   useEffect(() => {
-    if ("requestIdleCallback" in window) {
+    if (typeof window.requestIdleCallback === "function") {
       const idleId = window.requestIdleCallback(() => setAdvisorReady(true), { timeout: 1400 });
       return () => window.cancelIdleCallback(idleId);
     }
-    const timeoutId = window.setTimeout(() => setAdvisorReady(true), 900);
-    return () => window.clearTimeout(timeoutId);
+    const timeoutId = globalThis.setTimeout(() => setAdvisorReady(true), 900);
+    return () => globalThis.clearTimeout(timeoutId);
   }, []);
 
   return (

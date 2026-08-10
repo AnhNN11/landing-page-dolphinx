@@ -30,7 +30,7 @@ function subscribeLocale(listener: () => void) {
 }
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const locale = useSyncExternalStore(subscribeLocale, readLocale, () => "vi");
+  const locale = useSyncExternalStore<Locale>(subscribeLocale, readLocale, (): Locale => "vi");
   const setLocale = useCallback((nextLocale: Locale) => {
     window.localStorage.setItem(STORAGE_KEY, nextLocale);
     window.dispatchEvent(new Event(LOCALE_EVENT));
