@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Check, Layers3, MousePointer2, Sparkles } from "
 import { ServiceFooter, ServiceNav } from "../../components/MarketingChrome";
 import { StableLink as Link } from "../../components/StableLink";
 import { WebsiteConceptCover } from "../../components/WebsiteConceptCover";
+import { absoluteUrl, createPageMetadata, serializeJsonLd, SITE_URL } from "../../seo";
 import { getWebsiteProduct, websiteProducts } from "../products";
 
 export function generateStaticParams() {
@@ -14,11 +15,13 @@ export async function generateMetadata({ params }: PageProps<"/website/[slug]">)
   const { slug } = await params;
   const product = getWebsiteProduct(slug);
   if (!product) return {};
-  return {
+  return createPageMetadata({
     title: product.name,
     description: product.summary,
-    openGraph: { title: `${product.name} | DolphinX Studio`, description: product.summary },
-  };
+    path: `/website/${slug}`,
+    image: product.image,
+    imageAlt: product.imageAlt,
+  });
 }
 
 export default async function WebsiteProductDetail({ params }: PageProps<"/website/[slug]">) {
@@ -27,9 +30,34 @@ export default async function WebsiteProductDetail({ params }: PageProps<"/websi
   if (!product) notFound();
   const currentIndex = websiteProducts.findIndex((item) => item.slug === slug);
   const nextProduct = websiteProducts[(currentIndex + 1) % websiteProducts.length];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${absoluteUrl(`/website/${product.slug}`)}#service`,
+        name: product.name,
+        description: product.description,
+        serviceType: product.category,
+        url: absoluteUrl(`/website/${product.slug}`),
+        image: absoluteUrl(product.image),
+        provider: { "@id": `${SITE_URL}/#organization` },
+        areaServed: { "@type": "Country", name: "Việt Nam" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Trang chủ", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Website", item: absoluteUrl("/website") },
+          { "@type": "ListItem", position: 3, name: product.name, item: absoluteUrl(`/website/${product.slug}`) },
+        ],
+      },
+    ],
+  };
 
   return (
     <main className="min-h-screen bg-white text-[#071c4b]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
       <ServiceNav />
       <section className="relative overflow-hidden px-4 pb-16 pt-16 md:pb-24 md:pt-24" style={{ background: `radial-gradient(circle at 80% 12%, ${product.tone}, transparent 36%), #f8fbff` }}>
         <div className="mx-auto max-w-[1200px]">

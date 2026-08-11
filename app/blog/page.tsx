@@ -1,19 +1,16 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { BlogCover } from "../components/BlogCover";
 import { ServiceFooter, ServiceNav } from "../components/MarketingChrome";
 import { StableLink as Link } from "../components/StableLink";
 import { blogArticles } from "./articles";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Blog Website, Zalo Mini App & Chuyển đổi số",
   description: "Kiến thức thực tế về landing page, Zalo Mini App, UX/UI, SEO và tự động hoá dành cho doanh nghiệp Việt từ DolphinX Studio.",
-  openGraph: {
-    title: "DolphinX Insights — Sản phẩm số cho doanh nghiệp",
-    description: "Góc nhìn thực tế về website, Zalo Mini App và tối ưu doanh nghiệp trên nền tảng số.",
-  },
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
   const [featured, ...articles] = blogArticles;

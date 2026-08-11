@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Check, Database, Smartphone, Workflow } from "lu
 import { MiniAppPhonePreview } from "../../components/MiniAppPhonePreview";
 import { ServiceFooter, ServiceNav } from "../../components/MarketingChrome";
 import { StableLink as Link } from "../../components/StableLink";
+import { absoluteUrl, createPageMetadata, serializeJsonLd, SITE_URL } from "../../seo";
 import { getMiniAppTemplate, miniAppTemplates } from "../templates";
 
 export function generateStaticParams() {
@@ -14,7 +15,11 @@ export async function generateMetadata({ params }: PageProps<"/zalo-mini-app/[sl
   const { slug } = await params;
   const template = getMiniAppTemplate(slug);
   if (!template) return {};
-  return { title: template.name, description: template.summary };
+  return createPageMetadata({
+    title: `${template.name} — Zalo Mini App`,
+    description: template.summary,
+    path: `/zalo-mini-app/${slug}`,
+  });
 }
 
 export default async function MiniAppTemplateDetail({ params }: PageProps<"/zalo-mini-app/[slug]">) {
@@ -23,9 +28,33 @@ export default async function MiniAppTemplateDetail({ params }: PageProps<"/zalo
   if (!template) notFound();
   const currentIndex = miniAppTemplates.findIndex((item) => item.slug === slug);
   const nextTemplate = miniAppTemplates[(currentIndex + 1) % miniAppTemplates.length];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${absoluteUrl(`/zalo-mini-app/${template.slug}`)}#service`,
+        name: `${template.name} — Zalo Mini App`,
+        description: template.summary,
+        serviceType: "Phát triển Zalo Mini App",
+        url: absoluteUrl(`/zalo-mini-app/${template.slug}`),
+        provider: { "@id": `${SITE_URL}/#organization` },
+        areaServed: { "@type": "Country", name: "Việt Nam" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Trang chủ", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Zalo Mini App", item: absoluteUrl("/zalo-mini-app") },
+          { "@type": "ListItem", position: 3, name: template.name, item: absoluteUrl(`/zalo-mini-app/${template.slug}`) },
+        ],
+      },
+    ],
+  };
 
   return (
     <main className="min-h-screen bg-white text-[#071c4b]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
       <ServiceNav />
       <section className="relative overflow-hidden px-4 py-20 md:py-28" style={{ background: `radial-gradient(circle at 78% 25%, ${template.accentSoft}, transparent 32%), #f8fbff` }}>
         <div className="mx-auto grid max-w-[1200px] items-center gap-16 md:grid-cols-[1.1fr_.9fr]">

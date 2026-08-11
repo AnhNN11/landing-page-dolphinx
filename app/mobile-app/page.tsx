@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
 import { DigitalProductGallery, type DigitalProject } from "../components/DigitalProductGallery";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = { title: "Thiết kế Mobile App iOS & Android", description: "DolphinX Studio thiết kế và phát triển ứng dụng mobile cho bán lẻ, vận hành, giáo dục và dịch vụ." };
+export const metadata = createPageMetadata({
+  title: "Thiết kế Mobile App iOS & Android",
+  description: "DolphinX Studio thiết kế và phát triển ứng dụng mobile cho bán lẻ, vận hành, giáo dục và dịch vụ.",
+  path: "/mobile-app",
+});
 
 const projects: DigitalProject[] = [
   { id:"retail-companion", name:"Retail Companion", category:"Retail Mobile App", headline:"Mua sắm, thành viên và ưu đãi trong một ứng dụng.", summary:"Concept mobile app cho thương hiệu bán lẻ kết nối catalog, membership và lịch sử giao dịch.", image:"/images/mini-app-showcase.png", accent:"#075fc2", features:["Catalog","Membership","Order tracking"], imageFit:"cover", imagePosition:"center" },

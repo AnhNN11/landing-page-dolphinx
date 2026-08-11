@@ -131,22 +131,6 @@ const faqsEn = [
   ["How long does implementation take?", "It depends on scope and integration complexity. After the first conversation, we provide a roadmap with clear design, development, testing and handover milestones."],
 ];
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "DolphinX Studio",
-  description: "Thiết kế website, phát triển Zalo Mini App và phần mềm theo yêu cầu.",
-  areaServed: "Việt Nam",
-  sameAs: ["https://www.facebook.com/profile.php?id=61565408955535&locale=vi_VN"],
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "60 Nguyễn Trường Tộ",
-    addressLocality: "Phường Đăk Cấm",
-    addressRegion: "Tỉnh Quảng Ngãi",
-    addressCountry: "VN",
-  },
-};
-
 function ContactButton({ light = false, label = "Tư vấn dự án", labelEn = "Discuss a project" }: { light?: boolean; label?: string; labelEn?: string }) {
   const { t } = useLocale();
   return (
@@ -238,8 +222,6 @@ export default function Home() {
 
   return (
     <main className="site-shell" id="top">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
       <ServiceNav />
 
       <section className="hero-section">

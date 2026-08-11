@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BlogCover } from "../../components/BlogCover";
 import { ServiceFooter, ServiceNav } from "../../components/MarketingChrome";
 import { StableLink as Link } from "../../components/StableLink";
+import { absoluteUrl, createPageMetadata, serializeJsonLd, SITE_URL } from "../../seo";
 import { blogArticles, getBlogArticle } from "../articles";
 
 export function generateStaticParams() {
@@ -14,12 +15,16 @@ export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): P
   const { slug } = await params;
   const article = getBlogArticle(slug);
   if (!article) return {};
-  return {
+  return createPageMetadata({
     title: article.title,
     description: article.description,
-    keywords: [article.category, "DolphinX Studio", "doanh nghiệp số", "Quảng Ngãi"],
-    openGraph: { type: "article", title: article.title, description: article.description, publishedTime: article.date, images: article.coverImage ? [{ url: article.coverImage, alt: article.coverAlt ?? article.title }] : undefined },
-  };
+    path: `/blog/${slug}`,
+    image: article.coverImage,
+    imageAlt: article.coverAlt ?? article.title,
+    type: "article",
+    publishedTime: article.date,
+    modifiedTime: article.date,
+  });
 }
 
 export default async function BlogArticlePage({ params }: PageProps<"/blog/[slug]">) {
@@ -36,13 +41,19 @@ export default async function BlogArticlePage({ params }: PageProps<"/blog/[slug
     datePublished: article.date,
     dateModified: article.date,
     inLanguage: "vi-VN",
-    author: { "@type": "Organization", name: "DolphinX Studio" },
-    publisher: { "@type": "Organization", name: "DolphinX Studio" },
+    image: article.coverImage ? absoluteUrl(article.coverImage) : absoluteUrl("/og.png"),
+    url: absoluteUrl(`/blog/${article.slug}`),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": absoluteUrl(`/blog/${article.slug}`),
+    },
+    author: { "@id": `${SITE_URL}/#organization` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
   };
 
   return (
     <main className="min-h-screen bg-white text-[#071c4b]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeJsonLd(jsonLd)}}/>
       <ServiceNav />
       <article>
         <header className="relative overflow-hidden px-4 pb-16 pt-16 md:pb-24 md:pt-24" style={{background:`radial-gradient(circle at 80% 12%,${article.accent}20,transparent 35%),#f8fbff`}}><div className="mx-auto max-w-[1100px]"><Link href="/blog" className="inline-flex items-center gap-2 text-xs font-bold text-[#075fc2]"><ArrowLeft size={15}/>Tất cả bài viết</Link><div className="mt-12 max-w-4xl"><span className="text-[10px] font-black tracking-[.16em]" style={{color:article.accent}}>{article.category.toUpperCase()}</span><h1 className="dx-heading-gradient mt-5 font-[family-name:var(--display)] text-[clamp(46px,7vw,84px)] font-semibold leading-[.98] tracking-[-.065em]">{article.title}</h1><p className="mt-7 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">{article.excerpt}</p><div className="mt-7 flex flex-wrap items-center gap-5 text-[9px] font-semibold text-slate-400"><span>DolphinX Editorial</span><span className="flex items-center gap-2"><Clock3 size={13}/>{article.readingTime}</span><span>{article.dateLabel}</span></div></div><div className="mt-14 overflow-hidden rounded-[28px] border border-blue-100 bg-white shadow-[0_35px_90px_rgba(7,45,102,.12)]"><BlogCover article={article}/></div>{article.coverCredit&&<div className="mt-4 flex flex-col gap-2 rounded-xl border border-slate-200 bg-white/80 px-4 py-3 text-[10px] leading-5 text-slate-500 sm:flex-row sm:items-center sm:justify-between"><span>{article.coverCredit.note}</span><a href={article.coverCredit.href} target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-2 font-bold text-[#075fc2]">{article.coverCredit.label}<ExternalLink size={12}/></a></div>}</div></header>

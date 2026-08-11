@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
 import { DigitalProductGallery, type DigitalProject } from "../components/DigitalProductGallery";
+import { createPageMetadata } from "../seo";
 
-export const metadata: Metadata = { title: "Phát triển Web App & Phần mềm doanh nghiệp", description: "DolphinX Studio phát triển CRM, dashboard, phần mềm quản lý và web app theo yêu cầu cho doanh nghiệp." };
+export const metadata = createPageMetadata({
+  title: "Phát triển Web App & Phần mềm doanh nghiệp",
+  description: "DolphinX Studio phát triển CRM, dashboard, phần mềm quản lý và web app theo yêu cầu cho doanh nghiệp.",
+  path: "/web-app",
+});
 
 const projects: DigitalProject[] = [
   { id:"flowops-crm", name:"FlowOps CRM", category:"Sales Operations", headline:"Một nơi để nhìn thấy toàn bộ hành trình khách hàng.", summary:"CRM concept cho đội bán hàng quản lý lead, lịch sử trao đổi, cơ hội và hoạt động tiếp theo.", image:"/images/startup-meeting-pexels.jpg", accent:"#075fc2", features:["Lead pipeline","Activity log","Reporting"] },
