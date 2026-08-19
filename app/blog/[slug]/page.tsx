@@ -33,22 +33,34 @@ export default async function BlogArticlePage({ params }: PageProps<"/blog/[slug
   if (!article) notFound();
   const currentIndex = blogArticles.findIndex((item) => item.slug === slug);
   const nextArticle = blogArticles[(currentIndex + 1) % blogArticles.length];
+  const articleUrl = absoluteUrl(`/blog/${article.slug}`);
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: article.title,
-    description: article.description,
-    datePublished: article.date,
-    dateModified: article.date,
-    inLanguage: "vi-VN",
-    image: article.coverImage ? absoluteUrl(article.coverImage) : absoluteUrl("/og.png"),
-    url: absoluteUrl(`/blog/${article.slug}`),
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": absoluteUrl(`/blog/${article.slug}`),
-    },
-    author: { "@id": `${SITE_URL}/#organization` },
-    publisher: { "@id": `${SITE_URL}/#organization` },
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${articleUrl}#article`,
+        headline: article.title,
+        description: article.description,
+        datePublished: article.date,
+        dateModified: article.date,
+        inLanguage: "vi-VN",
+        image: article.coverImage ? absoluteUrl(article.coverImage) : absoluteUrl("/og.png"),
+        url: articleUrl,
+        mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+        author: { "@id": `${SITE_URL}/#organization` },
+        publisher: { "@id": `${SITE_URL}/#organization` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${articleUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Trang chủ", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl("/blog") },
+          { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
+        ],
+      },
+    ],
   };
 
   return (

@@ -25,6 +25,65 @@ export type BlogArticle = {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "thiet-ke-website-quang-ngai-chi-phi-quy-trinh-checklist",
+    title: "Thiết kế website tại Quảng Ngãi: chi phí, quy trình và checklist cần biết",
+    category: "Website",
+    excerpt: "Một hướng dẫn thực tế giúp doanh nghiệp xác định phạm vi, dự toán chi phí và chọn đúng quy trình trước khi bắt đầu làm website.",
+    description: "Hướng dẫn thiết kế website tại Quảng Ngãi: các hạng mục chi phí, quy trình triển khai, checklist chọn đơn vị phát triển và cách đo hiệu quả sau ra mắt.",
+    date: "2026-08-11",
+    dateLabel: "11.08.2026",
+    readingTime: "10 phút đọc",
+    graphic: "seo",
+    accent: "#075fc2",
+    coverImage: "/images/dolphinx-vietnamese-product-team-uniform-1200.webp",
+    coverAlt: "Đội ngũ sản phẩm số DolphinX tại Việt Nam đang cùng thiết kế và phát triển website cho doanh nghiệp",
+    coverBadge: "DOLPHINX INSIGHTS · WEBSITE QUẢNG NGÃI",
+    intro: "Website hiệu quả không bắt đầu từ việc chọn một mẫu giao diện. Nó bắt đầu từ mục tiêu kinh doanh, hành trình khách hàng và phạm vi vận hành sau khi ra mắt. Với doanh nghiệp tại Quảng Ngãi, một đơn vị triển khai hiểu bối cảnh địa phương còn giúp quá trình trao đổi, thu thập nội dung và hỗ trợ sau bàn giao rõ ràng hơn.",
+    sections: [
+      {
+        heading: "Bắt đầu từ mục tiêu kinh doanh, không bắt đầu từ giao diện",
+        paragraphs: [
+          "Trước khi nói về màu sắc hay hiệu ứng, doanh nghiệp cần xác định website dùng để giới thiệu năng lực, tạo khách hàng tiềm năng, bán hàng hay hỗ trợ vận hành. Mỗi mục tiêu dẫn đến một cấu trúc nội dung và tập tính năng khác nhau.",
+          "Một website giới thiệu dịch vụ có thể ưu tiên hồ sơ năng lực, dự án và form tư vấn. Website bán hàng lại cần danh mục, thanh toán, chính sách giao nhận và quy trình xử lý đơn. Làm rõ mục tiêu sớm giúp tránh mua những tính năng chưa cần dùng.",
+        ],
+        bullets: ["Nhóm khách hàng chính là ai", "Hành động quan trọng nhất trên trang", "Nội dung và hình ảnh nào đã sẵn sàng", "Ai sẽ cập nhật website sau bàn giao"],
+      },
+      {
+        heading: "Chi phí website gồm những hạng mục nào?",
+        paragraphs: [
+          "Không nên đánh giá báo giá chỉ bằng số trang. Chi phí thực tế còn phụ thuộc vào mức độ thiết kế riêng, chất lượng nội dung, tính năng nghiệp vụ, tích hợp hệ thống và yêu cầu hỗ trợ sau khi website hoạt động.",
+          "Một dự toán minh bạch nên tách rõ chi phí một lần và chi phí định kỳ. Tên miền, hosting, chứng chỉ bảo mật, bảo trì, nội dung mới và công cụ đo lường đều cần được xác định người chịu trách nhiệm.",
+        ],
+        bullets: ["Tên miền, hosting và hạ tầng", "UX/UI theo mẫu hoặc thiết kế riêng", "Nội dung, hình ảnh và nhập liệu", "Tính năng, tích hợp và phân quyền", "Kiểm thử, đào tạo và bảo trì"],
+      },
+      {
+        heading: "Quy trình triển khai website rõ ràng",
+        paragraphs: [
+          "Một quy trình tốt tạo ra các mốc kiểm tra nhỏ thay vì chờ đến cuối mới xem toàn bộ website. Doanh nghiệp nên được duyệt kiến trúc nội dung, wireframe và giao diện trước khi đội phát triển hoàn thiện tính năng.",
+          "Sau giai đoạn lập trình cần có kiểm thử trên điện thoại, máy tính bảng và desktop; kiểm tra form, liên kết, tốc độ, metadata và dữ liệu đo lường trước khi trỏ tên miền chính thức.",
+        ],
+        bullets: ["Khám phá bài toán và chốt phạm vi", "Chuẩn bị nội dung và cấu trúc trang", "Wireframe, thiết kế giao diện và prototype", "Phát triển, tích hợp và nhập dữ liệu", "Kiểm thử, ra mắt và theo dõi sau bàn giao"],
+      },
+      {
+        heading: "Checklist chọn đơn vị thiết kế website tại Quảng Ngãi",
+        paragraphs: [
+          "Portfolio đẹp là một tín hiệu, nhưng chưa đủ. Hãy hỏi cách đơn vị triển khai thu thập yêu cầu, quản lý thay đổi, bàn giao quyền sở hữu và hỗ trợ khi website phát sinh lỗi.",
+          "Nếu doanh nghiệp cần làm việc trực tiếp tại Quảng Ngãi, hãy thống nhất rõ hình thức gặp, thời gian phản hồi và đầu mối chịu trách nhiệm. Sự thuận tiện địa lý chỉ có giá trị khi đi cùng quy trình minh bạch.",
+        ],
+        bullets: ["Phạm vi và tiêu chí nghiệm thu được ghi rõ", "Doanh nghiệp sở hữu tên miền, dữ liệu và tài khoản", "Có hướng dẫn quản trị sau bàn giao", "Có thiết lập SEO kỹ thuật và đo chuyển đổi cơ bản", "Chính sách bảo hành và bảo trì dễ hiểu"],
+      },
+      {
+        heading: "Sau khi ra mắt, cần đo điều gì?",
+        paragraphs: [
+          "Ra mắt không phải điểm kết thúc. Website cần được theo dõi bằng Search Console và công cụ phân tích để biết người dùng tìm thấy trang bằng truy vấn nào, nội dung nào tạo liên hệ và bước nào khiến họ rời đi.",
+          "Ưu tiên các chỉ số gắn với kết quả như số yêu cầu tư vấn hợp lệ, cuộc gọi, đơn hàng hoặc lượt đặt lịch. Lượt truy cập chỉ có ý nghĩa khi nó giúp doanh nghiệp hiểu và cải thiện hành trình khách hàng.",
+        ],
+        bullets: ["Khả năng lập chỉ mục và truy vấn tìm kiếm", "Tốc độ và trải nghiệm trên mobile", "Tỷ lệ gửi form hoặc nhấn liên hệ", "Chất lượng khách hàng tiềm năng", "Nội dung cần cập nhật theo dữ liệu thật"],
+      },
+    ],
+    takeaway: "Một website đáng đầu tư là website có mục tiêu rõ, phạm vi minh bạch, quyền sở hữu đầy đủ và tiếp tục được cải thiện bằng dữ liệu sau khi ra mắt.",
+  },
+  {
     slug: "phan-tich-website-fpt-da-nang-trai-nghiem-tuyen-sinh",
     title: "Website giáo dục cần làm rõ điều gì? Góc nhìn từ FPT Đà Nẵng",
     category: "Website",
