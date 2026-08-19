@@ -26,6 +26,7 @@ import type { LucideIcon } from "lucide-react";
 import { ReferenceGallery } from "../components/ReferenceGallery";
 import { ServiceFooter, ServiceNav } from "../components/MarketingChrome";
 import { ServicePricing } from "../components/ServicePricing";
+import { ServiceSeoContent } from "../components/ServiceSeoContent";
 import { StableLink as Link } from "../components/StableLink";
 
 const features: Array<[LucideIcon, string, string, string]> = [
@@ -57,7 +58,7 @@ export default function ZaloMiniAppPage() {
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-14 md:grid-cols-[.9fr_1.1fr]">
           <div>
             <span className="inline-flex items-center gap-2 rounded-lg border border-cyan-300/20 bg-cyan-300/10 px-3 py-2 text-[10px] font-extrabold tracking-[.14em] text-cyan-200"><span className="grid h-6 w-10 place-items-center rounded-md bg-white"><Image src="/images/zalo-wordmark.png" alt="Zalo" width={320} height={115} className="h-auto w-8"/></span> MINI APP STUDIO</span>
-            <h1 className="mt-7 max-w-2xl font-[family-name:var(--display)] text-[clamp(50px,7vw,88px)] font-semibold leading-[.98] tracking-[-.06em]">Mọi trải nghiệm khách hàng, <span className="dx-gradient-text-light">ngay trong Zalo.</span></h1>
+            <h1 className="mt-7 max-w-2xl font-[family-name:var(--display)] text-[clamp(50px,7vw,88px)] font-semibold leading-[.98] tracking-[-.06em]">Dịch vụ phát triển Zalo Mini App cho mọi trải nghiệm khách hàng, <span className="dx-gradient-text-light">ngay trong Zalo.</span></h1>
             <p className="mt-7 max-w-xl text-sm leading-7 text-slate-300 md:text-base">Từ tích điểm, ưu đãi đến mua hàng và đặt lịch — DolphinX xây một Mini App liền mạch, dễ dùng và kết nối được với vận hành thật.</p>
             <div className="mt-9 flex flex-wrap gap-4"><Link className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-cyan-400 px-6 text-xs font-extrabold text-[#071c4b] shadow-xl shadow-cyan-500/20" href="/#contact">Liên hệ ngay <ArrowRight size={17}/></Link><a className="flex min-h-12 items-center gap-2 px-2 text-xs font-bold text-white" href="#templates">Xem sản phẩm đang chạy <ArrowRight size={16}/></a><a className="flex min-h-12 items-center gap-2 px-2 text-xs font-bold text-cyan-200" href="#pricing">Cách tính chi phí <ArrowRight size={16}/></a></div>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-[10px] font-semibold text-slate-300"><span className="flex items-center gap-2"><CheckCircle2 size={15} className="text-cyan-300"/>Thiết kế theo nghiệp vụ</span><span className="flex items-center gap-2"><CheckCircle2 size={15} className="text-cyan-300"/>Tích hợp API</span><span className="flex items-center gap-2"><CheckCircle2 size={15} className="text-cyan-300"/>Tối ưu mobile</span></div>
@@ -121,6 +122,7 @@ export default function ZaloMiniAppPage() {
 
       <section className="px-4 py-24"><div className="mx-auto grid max-w-[1200px] overflow-hidden rounded-[30px] bg-gradient-to-br from-[#082b78] via-[#075fc2] to-[#13c7e9] text-white md:grid-cols-[1.2fr_.8fr]"><div className="p-9 md:p-16"><span className="text-[10px] font-black tracking-[.16em] text-cyan-100">BẮT ĐẦU TỪ BÀI TOÁN THẬT</span><h2 className="dx-heading-gradient-light mt-5 font-[family-name:var(--display)] text-4xl font-semibold leading-tight tracking-[-.05em] md:text-6xl">Xây Mini App mà khách hàng muốn dùng lại.</h2><p className="mt-5 max-w-xl text-sm leading-7 text-blue-50">Trao đổi trực tiếp về mô hình kinh doanh, dữ liệu hiện có và hành trình cần tối ưu.</p><Link className="dx-light-action mt-8 inline-flex items-center gap-2 rounded-xl px-6 text-xs font-bold" href="/#contact">Liên hệ ngay <ArrowRight size={17}/></Link></div><div className="relative min-h-[340px]"><Image src="/images/dolphinx-mascot-zalo-v2.webp" alt="Cá heo DolphinX đội nón lá giới thiệu Zalo Mini App" fill sizes="(max-width: 768px) 100vw, 420px" className="object-contain object-center drop-shadow-[0_28px_32px_rgba(3,27,75,.28)]"/><div className="absolute inset-0 bg-gradient-to-r from-[#075fc2] via-transparent to-transparent"/></div></div></section>
 
+      <ServiceSeoContent service="zalo" />
       <ServicePricing service="zalo" />
       <ServiceFooter />
     </main>

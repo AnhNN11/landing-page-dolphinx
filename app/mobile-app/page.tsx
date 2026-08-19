@@ -2,8 +2,8 @@ import { DigitalProductGallery, type DigitalProject } from "../components/Digita
 import { createPageMetadata } from "../seo";
 
 export const metadata = createPageMetadata({
-  title: "Thiết kế Mobile App iOS & Android",
-  description: "DolphinX Studio thiết kế và phát triển ứng dụng mobile cho bán lẻ, vận hành, giáo dục và dịch vụ.",
+  title: "Dịch vụ phát triển Mobile App iOS & Android",
+  description: "DolphinX Studio thiết kế UI/UX và phát triển Mobile App iOS, Android, MVP, backend và API cho bán lẻ, vận hành, giáo dục và dịch vụ.",
   path: "/mobile-app",
 });
 
@@ -14,4 +14,4 @@ const projects: DigitalProject[] = [
   { id:"service-pocket", name:"Service Pocket", category:"Booking App", headline:"Đặt dịch vụ và theo dõi lịch hẹn không cần gọi điện.", summary:"Ứng dụng đặt lịch cho doanh nghiệp dịch vụ với hồ sơ khách hàng và nhắc hẹn.", image:"/images/zalo-real-hands-phones.webp", accent:"#0a9b6b", features:["Booking","Profiles","Reminders"], imageFit:"cover", imagePosition:"center" },
 ];
 
-export default function MobileAppPage(){return <DigitalProductGallery eyebrow="MOBILE APP STUDIO" title="Ứng dụng mobile cho những hành trình" highlight="cần quay lại mỗi ngày." description="Thiết kế và phát triển ứng dụng iOS, Android theo nghiệp vụ thật — từ trải nghiệm người dùng đến dữ liệu và tích hợp phía sau." projects={projects} mode="mobile"/>;}
+export default function MobileAppPage(){return <DigitalProductGallery eyebrow="MOBILE APP STUDIO" title="Dịch vụ phát triển Mobile App cho những hành trình" highlight="cần quay lại mỗi ngày." description="Thiết kế và phát triển ứng dụng iOS, Android theo nghiệp vụ thật — từ trải nghiệm người dùng, MVP đến backend, dữ liệu và tích hợp phía sau." projects={projects} mode="mobile"/>;}

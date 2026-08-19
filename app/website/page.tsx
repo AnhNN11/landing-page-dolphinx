@@ -5,6 +5,7 @@ import { ArrowRight, BarChart3, Gauge, Layers3, MousePointer2, Search, ShieldChe
 import type { LucideIcon } from "lucide-react";
 import { ServiceFooter, ServiceNav } from "../components/MarketingChrome";
 import { ServicePricing } from "../components/ServicePricing";
+import { ServiceSeoContent } from "../components/ServiceSeoContent";
 import { StableLink as Link } from "../components/StableLink";
 import { ThemeReferenceLibrary } from "../components/ThemeReferenceLibrary";
 import { WebsiteUpgradeBuilder } from "../components/WebsiteUpgradeBuilder";
@@ -26,7 +27,7 @@ export default function WebsiteServicePage() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(18,188,235,.16),transparent_35%),radial-gradient(circle_at_25%_50%,rgba(9,107,199,.08),transparent_38%)]"/>
         <div className="relative mx-auto max-w-[1200px] text-center">
           <span className="inline-flex items-center gap-2 rounded-lg border border-blue-100 bg-blue-50 px-3 py-2 text-[10px] font-extrabold tracking-[.14em] text-blue-700"><Sparkles size={14}/> WEBSITE PRODUCT STUDIO</span>
-          <h1 className="mx-auto mt-7 max-w-5xl font-[family-name:var(--display)] text-[clamp(52px,8vw,104px)] font-semibold leading-[.98] tracking-[-.065em]">Website đẹp để <span className="dx-gradient-text">tạo ra hành động.</span></h1>
+          <h1 className="mx-auto mt-7 max-w-5xl font-[family-name:var(--display)] text-[clamp(52px,8vw,104px)] font-semibold leading-[.98] tracking-[-.065em]">Dịch vụ thiết kế website đẹp để <span className="dx-gradient-text">tạo ra hành động.</span></h1>
           <p className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">Thiết kế website và landing page như một sản phẩm tăng trưởng: rõ thông điệp, giàu trải nghiệm, tải nhanh và đo lường được.</p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4"><Link className="dx-primary-action inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#075fc2] px-6 text-xs font-bold !text-white shadow-xl shadow-[#075fc2]/20" href="/studio" style={{ backgroundColor: "#075fc2", color: "#ffffff" }}><span className="!text-white">Tự thiết kế website</span> <ArrowRight size={17} className="text-white"/></Link><Link className="flex min-h-12 items-center gap-2 px-2 text-xs font-bold text-[#075fc2]" href="#products">Xem website có sẵn <ArrowRight size={16}/></Link><Link className="flex min-h-12 items-center gap-2 px-2 text-xs font-bold text-[#075fc2]" href="#pricing">Cách tính chi phí <ArrowRight size={16}/></Link></div>
         </div>
@@ -50,6 +51,7 @@ export default function WebsiteServicePage() {
 
       <WebsiteUpgradeBuilder />
       <section className="px-4 pb-10 pt-20 md:pb-14 md:pt-28"><div className="mx-auto grid max-w-[1200px] overflow-hidden rounded-[28px] bg-gradient-to-br from-[#082b78] via-[#075fc2] to-[#13c7e9] text-white md:grid-cols-[1.05fr_.95fr]"><div className="p-9 md:p-16"><span className="text-[10px] font-black tracking-[.16em] text-cyan-200">TỪ Ý TƯỞNG ĐẾN WEBSITE</span><h2 className="dx-heading-gradient-light dx-vietnamese-title mt-5 font-[family-name:var(--display)] text-4xl font-semibold leading-[1.1] tracking-[-.04em] md:text-6xl md:leading-tight md:tracking-[-.05em]">Ra mắt một website xứng đáng với thương hiệu của bạn.</h2><p className="mt-5 max-w-xl text-sm leading-7 text-blue-100">Bắt đầu bằng một buổi trao đổi để xác định thông điệp, cấu trúc và mục tiêu chuyển đổi.</p><Link className="dx-light-action mt-8 inline-flex items-center gap-2 rounded-xl px-6 text-xs font-bold" href="/#contact">Trao đổi về website <ArrowRight size={17}/></Link></div><div className="relative min-h-[330px] bg-[radial-gradient(circle_at_center,rgba(255,255,255,.24),transparent_60%)] p-6 md:min-h-[440px] md:p-10"><div className="relative h-full min-h-[280px] overflow-hidden rounded-[22px] border border-white/25 bg-white shadow-[0_30px_70px_rgba(3,31,91,.28)] md:min-h-[360px]"><Image src="/images/theme-references/agency.jpg" alt="Mẫu website doanh nghiệp để trao đổi định hướng thiết kế" fill sizes="(max-width:768px) 100vw,45vw" className="object-cover object-top"/><span className="absolute bottom-4 left-4 rounded-full bg-[#071c4b]/88 px-4 py-2 text-[8px] font-black tracking-[.12em] text-cyan-200 backdrop-blur">WEBSITE REFERENCE · DOLPHINX</span></div></div></div></section>
+      <ServiceSeoContent service="website" />
       <ServicePricing service="website" />
       <ServiceFooter />
     </main>

@@ -9,8 +9,9 @@ import { absoluteUrl, serializeJsonLd, SITE_URL } from "./seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: "DolphinX Studio",
   title: {
-    default: "DolphinX Studio | Product Studio cho Startup, SaaS & Doanh nghiệp",
+    default: "DolphinX Studio | Thiết kế Website, Zalo Mini App & Phần mềm",
     template: "%s | DolphinX Studio",
   },
   description:
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
   publisher: "DolphinX Studio",
   category: "Công nghệ thông tin",
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    shortcut: "/icon.png",
+    icon: [{ url: "/images/dolphinx-dolphin-mark-192.webp", type: "image/webp", sizes: "192x192" }],
+    shortcut: "/images/dolphinx-dolphin-mark-192.webp",
     apple: "/icon.png",
   },
   openGraph: {
@@ -70,8 +71,11 @@ const organizationJsonLd = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: "DolphinX Studio",
+      alternateName: ["DolphinX", "DolphinX Studio Việt Nam"],
+      legalName: "CÔNG TY TNHH MTV DOLPHINX STUDIO",
+      taxID: "6101312616",
       url: SITE_URL,
-      logo: absoluteUrl("/icon.png"),
+      logo: absoluteUrl("/images/dolphinx-dolphin-mark-192.webp"),
       image: absoluteUrl("/og.png"),
       description:
         "Product studio thiết kế website, Zalo Mini App, ứng dụng mobile và phần mềm theo yêu cầu cho doanh nghiệp Việt.",
@@ -90,6 +94,7 @@ const organizationJsonLd = {
       "@type": "ProfessionalService",
       "@id": `${SITE_URL}/#business`,
       name: "DolphinX Studio",
+      alternateName: "DolphinX",
       url: SITE_URL,
       image: absoluteUrl("/og.png"),
       parentOrganization: { "@id": `${SITE_URL}/#organization` },
@@ -121,6 +126,7 @@ const organizationJsonLd = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: "DolphinX Studio",
+      alternateName: ["DolphinX", "DolphinX Studio Việt Nam", "dolphinxstudio.com"],
       inLanguage: ["vi-VN", "en"],
       publisher: { "@id": `${SITE_URL}/#organization` },
     },

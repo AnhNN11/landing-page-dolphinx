@@ -2,8 +2,8 @@ import { DigitalProductGallery, type DigitalProject } from "../components/Digita
 import { createPageMetadata } from "../seo";
 
 export const metadata = createPageMetadata({
-  title: "Phát triển Web App & Phần mềm doanh nghiệp",
-  description: "DolphinX Studio phát triển CRM, dashboard, phần mềm quản lý và web app theo yêu cầu cho doanh nghiệp.",
+  title: "Phát triển phần mềm theo yêu cầu, Web App & CRM",
+  description: "DolphinX Studio phát triển phần mềm theo yêu cầu, CRM, dashboard, web app quản lý và MVP cho doanh nghiệp, startup và SaaS.",
   path: "/web-app",
 });
 
@@ -14,4 +14,4 @@ const projects: DigitalProject[] = [
   { id:"retail-analytics", name:"Retail Analytics", category:"Business Intelligence", headline:"Dữ liệu bán hàng được chuyển thành quyết định dễ hiểu.", summary:"Dashboard theo dõi doanh thu, sản phẩm, cửa hàng và chiến dịch cho đội ngũ quản lý.", image:"/images/vietnamese-retail-team-1200.webp", accent:"#f07832", features:["KPI dashboard","Store compare","Export report"] },
 ];
 
-export default function WebAppPage(){return <DigitalProductGallery eyebrow="WEB APP & BUSINESS SOFTWARE" title="Phần mềm được xây quanh cách doanh nghiệp" highlight="thực sự vận hành." description="CRM, dashboard và hệ thống quản lý theo yêu cầu với giao diện dễ dùng, dữ liệu rõ và khả năng mở rộng theo quy trình." projects={projects} mode="web"/>;}
+export default function WebAppPage(){return <DigitalProductGallery eyebrow="WEB APP & BUSINESS SOFTWARE" title="Dịch vụ phát triển phần mềm theo yêu cầu," highlight="xây quanh cách doanh nghiệp vận hành." description="CRM, dashboard, MVP và hệ thống quản lý theo yêu cầu với giao diện dễ dùng, dữ liệu rõ và khả năng mở rộng theo quy trình." projects={projects} mode="web"/>;}

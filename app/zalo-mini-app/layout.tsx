@@ -1,9 +1,9 @@
 import { createPageMetadata } from "../seo";
 
 export const metadata = createPageMetadata({
-  title: "Thiết kế Zalo Mini App cho doanh nghiệp",
+  title: "Dịch vụ phát triển Zalo Mini App cho doanh nghiệp",
   description:
-    "DolphinX Studio phát triển Zalo Mini App tích điểm, membership, bán hàng, đặt lịch và tự động hóa chăm sóc khách hàng.",
+    "DolphinX Studio thiết kế và phát triển Zalo Mini App kết nối OA, thành viên, tích điểm, voucher, bán hàng, đặt lịch và phần mềm quản trị.",
   path: "/zalo-mini-app",
 });
 

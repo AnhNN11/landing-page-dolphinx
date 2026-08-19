@@ -3,6 +3,7 @@ import { Apple, ArrowRight, BadgeCheck, Layers3, Play, Sparkles } from "lucide-r
 import { DigitalProjectCatalog } from "./DigitalProjectCatalog";
 import { ServiceFooter, ServiceNav } from "./MarketingChrome";
 import { ServicePricing } from "./ServicePricing";
+import { ServiceSeoContent } from "./ServiceSeoContent";
 import { StableLink as Link } from "./StableLink";
 import { DXFlowHeroLoader } from "./DXFlowHeroLoader";
 
@@ -118,6 +119,7 @@ export function DigitalProductGallery({ eyebrow, title, highlight, description, 
         </div>
       </section>
 
+      <ServiceSeoContent service={isMobile ? "mobile" : "web"}/>
       <ServicePricing service={isMobile ? "mobile" : "web"}/>
       <ServiceFooter/>
     </main>

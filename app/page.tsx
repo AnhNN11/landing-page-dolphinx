@@ -228,7 +228,7 @@ export default function Home() {
         <div className="container hero-layout">
           <div className="hero-copy">
             <span className="hero-chip"><Sparkles size={14}/> {t("Product studio dành cho doanh nghiệp Việt", "Product studio for ambitious businesses")}</span>
-            <h1>{t("Nền tảng số toàn diện cho", "Connected digital products for")} <span className="dx-gradient-text">{t("doanh nghiệp tăng trưởng.", "business growth.")}</span></h1>
+            <h1>{t("DolphinX Studio — Nền tảng số toàn diện cho", "DolphinX Studio — Connected digital products for")} <span className="dx-gradient-text">{t("doanh nghiệp tăng trưởng.", "business growth.")}</span></h1>
             <p>{t("Website, Zalo Mini App và phần mềm được thiết kế thành một hệ thống liền mạch—giúp bạn có thêm khách hàng, vận hành gọn và phát triển bền vững.", "Websites, Zalo Mini Apps and custom software designed as one connected system—helping you win customers, simplify operations and grow sustainably.")}</p>
             <div className="hero-actions"><ContactButton label="Bắt đầu dự án" labelEn="Start a project"/><Link href="/studio">{t("Tự thiết kế website", "Build your website")} <ArrowRight size={16}/></Link></div>
             <div className="hero-trust"><div><BadgeCheck size={18}/><span><b>{t("Tư vấn rõ ràng", "Clear consultation")}</b><small>{t("Chọn đúng thứ cần làm", "Build the right thing first")}</small></span></div><div><ShieldCheck size={18}/><span><b>{t("Làm chủ dữ liệu", "Own your data")}</b><small>{t("Bàn giao minh bạch", "Transparent handover")}</small></span></div></div>
