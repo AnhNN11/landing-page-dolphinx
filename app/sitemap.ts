@@ -5,6 +5,7 @@ import { websiteProducts } from "./website/products";
 import { miniAppTemplates } from "./zalo-mini-app/templates";
 
 const siteUpdatedAt = new Date("2026-08-11T00:00:00+07:00");
+const legalUpdatedAt = new Date("2026-09-04T00:00:00+07:00");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
@@ -17,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/blog"), lastModified: siteUpdatedAt, changeFrequency: "weekly", priority: 0.8 },
     { url: absoluteUrl("/about"), lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.6 },
     { url: absoluteUrl("/studio"), lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.6 },
+    { url: absoluteUrl("/privacy-policy"), lastModified: legalUpdatedAt, changeFrequency: "yearly", priority: 0.3 },
+    { url: absoluteUrl("/terms-of-service"), lastModified: legalUpdatedAt, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const websitePages: MetadataRoute.Sitemap = websiteProducts.map((product) => ({
@@ -42,4 +45,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...websitePages, ...miniAppPages, ...articlePages];
 }
-

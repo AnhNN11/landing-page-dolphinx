@@ -3,6 +3,7 @@
 import { CheckCircle2, LoaderCircle, Send, ShieldCheck, Sparkles } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { useLocale } from "./LocaleProvider";
+import { StableLink as Link } from "./StableLink";
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
@@ -115,6 +116,13 @@ export function ConsultationForm() {
         {state === "submitting" ? <LoaderCircle className="consultation-spinner" size={18} /> : <Send size={17} />}
         {state === "submitting" ? t("Đang gửi...", "Sending...") : t("Gửi yêu cầu tư vấn", "Send consultation request")}
       </button>
+
+      <p className="mt-3 text-center text-[9px] leading-5 text-slate-500">
+        {t("Khi gửi biểu mẫu, bạn xác nhận đã đọc ", "By submitting, you confirm that you have read our ")}
+        <Link className="font-bold text-[#075fc2] underline decoration-blue-200 underline-offset-2" href="/privacy-policy">{t("Chính sách quyền riêng tư", "Privacy Policy")}</Link>
+        {t(" và ", " and ")}
+        <Link className="font-bold text-[#075fc2] underline decoration-blue-200 underline-offset-2" href="/terms-of-service">{t("Điều khoản sử dụng", "Terms of Service")}</Link>.
+      </p>
 
       <div className={`consultation-status ${state}`} role="status" aria-live="polite">
         {state === "success" && <CheckCircle2 size={17} />}

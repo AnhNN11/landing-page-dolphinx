@@ -25,7 +25,14 @@ export function ServiceFooter() {
           <div className="grid content-start gap-3 text-[13px] text-slate-400"><b className="mb-2 text-white">{t("Khám phá", "Explore")}</b><Link className="hover:text-cyan-200" href="/about">{t("Về chúng tôi", "About")}</Link><Link className="hover:text-cyan-200" href="/studio">{t("Tự thiết kế", "Website builder")}</Link><Link className="hover:text-cyan-200" href="/blog">{t("Blog & Kiến thức", "Blog & Insights")}</Link><Link className="hover:text-cyan-200" href="/#process">{t("Quy trình", "Process")}</Link><Link className="hover:text-cyan-200" href="/#packages">{t("Bảng giá", "Pricing")}</Link></div>
           <div className="grid content-start gap-4 text-[13px] leading-6 text-slate-400"><b className="text-white">{t("Liên hệ", "Contact")}</b><Link className="flex items-center gap-2 font-bold text-cyan-300" href="/#contact"><MessageCircleMore size={16}/>{t("Liên hệ ngay", "Contact us")} <ArrowRight size={14}/></Link><Link className="flex items-center gap-2 hover:text-white" href="https://www.facebook.com/profile.php?id=61565408955535&locale=vi_VN" target="_blank" rel="noreferrer"><ExternalLink size={16}/>Facebook DolphinX Studio</Link><p className="flex gap-2"><MapPin className="mt-1 shrink-0" size={16}/>{t("60 Nguyễn Trường Tộ, Phường Đăk Cấm, Tỉnh Quảng Ngãi, Việt Nam", "60 Nguyen Truong To, Dak Cam Ward, Quang Ngai Province, Vietnam")}</p></div>
         </div>
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-[10px] text-slate-500 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 CÔNG TY TNHH MTV DOLPHINX STUDIO</span><span>{t("Thiết kế và phát triển tại Quảng Ngãi · Việt Nam", "Designed and developed in Quang Ngai · Vietnam")}</span></div>
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-[10px] text-slate-500 md:flex-row md:items-center md:justify-between">
+          <span>© 2026 CÔNG TY TNHH MTV DOLPHINX STUDIO</span>
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2" aria-label={t("Thông tin pháp lý", "Legal information")}>
+            <Link className="transition hover:text-cyan-200" href="/privacy-policy">{t("Chính sách quyền riêng tư", "Privacy Policy")}</Link>
+            <Link className="transition hover:text-cyan-200" href="/terms-of-service">{t("Điều khoản sử dụng", "Terms of Service")}</Link>
+          </nav>
+          <span>{t("Thiết kế và phát triển tại Quảng Ngãi · Việt Nam", "Designed and developed in Quang Ngai · Vietnam")}</span>
+        </div>
       </div>
     </footer>
   );
