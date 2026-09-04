@@ -44,7 +44,7 @@ const privacyPolicy: LegalDocumentData = {
       paragraphs: [
         {
           vi: "CÔNG TY TNHH MTV DOLPHINX STUDIO (“DolphinX”, “chúng tôi”), mã số thuế 6101312616, địa chỉ 60 Nguyễn Trường Tộ, Phường Đăk Cấm, Tỉnh Quảng Ngãi, Việt Nam, chịu trách nhiệm đối với việc xử lý dữ liệu được mô tả trong Chính sách này.",
-          en: "DOLPHINX STUDIO ONE MEMBER COMPANY LIMITED (“DolphinX”, “we”, “us”), tax code 6101312616, at 60 Nguyen Truong To, Dak Cam Ward, Quang Ngai Province, Vietnam, is responsible for the data processing described in this Policy.",
+          en: "CÔNG TY TNHH MTV DOLPHINX STUDIO (“DolphinX”, “we”, “us”), tax code 6101312616, at 60 Nguyen Truong To, Dak Cam Ward, Quang Ngai Province, Vietnam, is responsible for the data processing described in this Policy.",
         },
         {
           vi: "Chính sách áp dụng cho website dolphinxstudio.com, biểu mẫu tư vấn, DolphinX Web Studio và các ứng dụng do DolphinX cung cấp có dẫn liên kết đến tài liệu này.",
@@ -161,8 +161,8 @@ const privacyPolicy: LegalDocumentData = {
           en: "Google Apps Script and Google Sheets to receive, store, and manage information submitted through the consultation form.",
         },
         {
-          vi: "Cloudflare và các nhà cung cấp hạ tầng triển khai được DolphinX sử dụng để phân phối, bảo vệ và giám sát kỹ thuật cho website.",
-          en: "Cloudflare and deployment infrastructure providers used by DolphinX to deliver, protect, and technically monitor the website.",
+          vi: "Vercel, Cloudflare và các nhà cung cấp hạ tầng triển khai được DolphinX sử dụng để phân phối, bảo vệ và giám sát kỹ thuật cho website.",
+          en: "Vercel, Cloudflare, and other deployment infrastructure providers used by DolphinX to deliver, protect, and technically monitor the website.",
         },
         {
           vi: "Đối tác dự án khác chỉ khi cần thiết để thực hiện dịch vụ đã thỏa thuận hoặc khi bạn đã được thông báo phù hợp.",
